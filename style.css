@@ -1,0 +1,165 @@
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --ff-primary: 'Source Sans pro', sans-serif;
+    --ffsecondary: 'Source Code Pro', monospace;
+
+    --fw-reg:  300;
+    --fw-bold: 900;
+
+
+    --clr-light: #fff;
+    --clr-dark:  #303030;
+    --clr-accent: #1c8d7a;
+
+
+    --fs-h1: 3rem;
+    --fs-h2: 2.25rem;
+    --fs-h3: 1.25rem;
+    --fs-body: 1rem;
+
+    --bs: 0.25em 0.25 0.75 rgba(0,0,0,25);
+}
+
+@media (min-with: 800px){
+    :root {
+        --fs-h1: 4.5rem;
+        --fs-h2: 3.75rem;
+        --fs-h3: 1.5rem;
+        --fs-body: 1.125rem;
+    }
+}
+
+/* General style */
+
+body{
+   background: (var(--clr-light));
+   color: (var(--clr-dark));
+   margin: 0;
+   font-family: var(--ff-primary);
+   font-size: var(--fs-body);
+   line-height: 1.6;
+
+}
+
+section {
+    padding: 5em 2em;
+
+}
+ img {
+     display: block;
+     max-width: 100%
+ }
+ strong{ font-weight: var(--fw-bold)}
+
+ /* Typography */
+  
+
+ h1,
+ h2,
+ h3 {
+     line-height: 1;
+     margin:0;
+ }
+
+h1 { font-size: var(--fs-h1)}
+h2 { font-size: var(--fs-h2)}
+h3 { font-size: var(--fs-h3)}
+
+.section__tile {
+    margin-bottom: .25em;
+}
+
+.section__tile--intro {
+    font-weight: var(--fw-reg);
+}
+
+.section__tile--intro strong {
+    display: block;
+}
+
+.section__subtitle{
+    margin: 0;
+    font-size: var(--fs-h3);
+}
+
+,section__subtitle--intro,
+.section__subtitle--about{
+    background-image: var(--clr-accent);
+    padding: .25em 1em;
+    font-family: var(--fw-secondary);
+    margin-bottom: 1em;
+}
+
+
+/* header */
+nav  { display: none; }
+
+
+/* Intro section */
+
+.intro {
+    position: relative;
+}
+
+.intro--img {
+    box-shadow: var(--bs);
+}
+@media (min-width: 600px){
+    .intro {
+        display: grid;
+        width: min-content;
+        margin: 0 auto;
+        grid-template-areas:
+          "img title"
+          "img subtitle";
+        grid-template-columns: min-content max-content;
+    }
+    .intro__img {
+        grid-area: img;
+        min-width: 250px;
+
+    }
+    .section__subtitle--intro {
+        align-self: start;
+        grid-column: -1/1;
+        grid-row: 2;
+        position: relative;
+        left: -1.5 em;
+        width: calc; 
+    }
+}
+/* My services section */
+.my-services{
+    background-color: var(--clr-accent) ;
+
+}
+
+.section__title--services{
+    color: var(--clr-dark);
+    position:relative;
+}
+
+
+.about-me{
+    background-color: var(--clr-dark);
+}
+.about-me{
+    max-width: 2000px;
+    margin: 0 auto;
+}
+
+@media (min-with: 600px) {
+    .about-me{
+         diaplay; grid;
+         grid-template-columns: 1fr 200px;
+         grid-template-areas: 
+            "title img"
+            "subtitle img"
+            "text img"
+    }
+}
